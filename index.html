@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Tribu de Val - Association pour l'enfance et les familles de l'Yonne</title>
+    <style>
+        :root {
+            --orange-main: #E26A28;
+            --orange-light: #FFF6EE;
+            --green-main: #4A6B32;
+            --green-light: #F2F7EF;
+            --bg-cream: #FDFBF7;
+            --text-dark: #333333;
+            --white: #FFFFFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* EN-TÊTE & NAVIGATION STICKY */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 55px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .logo-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--orange-main);
+        }
+
+        nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--orange-main);
+        }
+
+        /* BANNIÈRE D'ACCUEIL (HERO) */
+        .hero {
+            background-color: var(--orange-light);
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 4px solid var(--orange-main);
+        }
+
+        .hero-logo {
+            max-width: 170px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            color: var(--orange-main);
+            font-size: 2.8rem;
+            margin: 10px 0;
+        }
+
+        .hero p.slogan {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--green-main);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero p.description {
+            max-width: 750px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: var(--orange-main);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background-color: #c8571b;
+        }
+
+        .btn-green {
+            background-color: var(--green-main);
+        }
+
+        .btn-green:hover {
+            background-color: #385225;
+        }
+
+        /* SECTIONS GÉNÉRALES */
+        section {
+            padding: 60px 20px;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--orange-main);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* SECTION ACTIVITÉS */
+        .grid-activites {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card-actu {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--orange-main);
+        }
+
+        .card-actu h3 {
+            margin-top: 0;
+            color: var(--orange-main);
+            font-size: 1.2rem;
+        }
+
+        /* SECTION VALEURS */
+        #valeurs-section {
+            background-color: var(--green-light);
+            max-width: 100%;
+            padding: 60px 20px;
+        }
+
+        .valeurs-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .valeur-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            border-left: 6px solid var(--green-main);
+        }
+
+        .valeur-card h3 {
+            margin-top: 0;
+            color: var(--green-main);
+            font-size: 1.25rem;
+        }
+
+        /* SECTION ADHÉSION */
+        .adhesion-box {
+            background-color: var(--white);
+            border: 2px solid var(--orange-main);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .adhesion-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .adhesion-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .adhesion-list li::before {
+            content: "🧡";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* SECTION CONTACT */
+        #contact-section {
+            background-color: var(--orange-light);
+            max-width: 100%;
+            padding: 60px 20px;
+        }
+
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .fb-btn { background-color: #1877F2; }
+        .insta-btn { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+
+        /* PIED DE PAGE */
+        footer {
+            background-color: var(--green-main);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer a {
+            color: #FFD1A9;
+            text-decoration: none;
+        }
+
+        /* POP-UP MENTIONS LÉGALES (FENÊTRE MODALE) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 750px;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: var(--orange-main);
+        }
+
+        .modal-content h2 {
+            color: var(--orange-main);
+            margin-top: 0;
+            border-bottom: 2px solid var(--orange-main);
+            padding-bottom: 10px;
+        }
+
+        .modal-content h3 {
+            color: var(--green-main);
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="accueil">
+        <div class="logo-container">
+            <img src="4131a53b-7a41-4568-8d8c-be5bc1652941.jpg" alt="Logo La Tribu de Val" class="logo-img">
+            <span class="logo-title">La Tribu de Val</span>
+        </div>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#activites">Nos Activités</a>
+            <a href="#valeurs">Nos Valeurs</a>
+            <a href="#adhesion">Rejoindre / Adhérer</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <img src="4131a53b-7a41-4568-8d8c-be5bc1652941.jpg" alt="Logo La Tribu de Val" class="hero-logo">
+        <h1>La Tribu de Val</h1>
+        <p class="slogan">"Créer du lien, partager et s'épanouir ensemble !"</p>
+        <p class="description">
+            La Tribu de Val propose des activités conviviales, culturelles, sportives et familiales destinées aux enfants, aux familles et à tous les habitants de l'Yonne.
+        </p>
+        <div class="hero-buttons">
+            <a href="#adhesion" class="btn">Adhérer à l'association</a>
+            <a href="#contact" class="btn btn-green">Nous contacter</a>
+        </div>
+    </div>
+
+    <section id="activites">
+        <h2 style="color: var(--orange-main);">Nos Activités</h2>
+        <div class="grid-activites">
+            <div class="card-actu">
+                <h3>🎨 Ateliers créatifs, couture & flocage</h3>
+                <p>Dessin, bricolage, peinture, couture, flocage et travaux manuels pour libérer l'imagination des petits et grands.</p>
+            </div>
+            <div class="card-actu">
+                <h3>📖 Lecture, Manga & Festival du livre</h3>
+                <p>Moments de lecture partagée, découverte du livre, festival du livre et univers manga pour favoriser le goût de lire.</p>
+            </div>
+            <div class="card-actu">
+                <h3>🎲 Jeux</h3>
+                <p>Jeux de société, grands jeux et animations ludiques en famille pour partager des moments de joie.</p>
+            </div>
+            <div class="card-actu">
+                <h3>🍃 Nature & découvertes</h3>
+                <p>Sensibilisation à l'environnement, balades et ateliers en plein air dans l'Yonne.</p>
+            </div>
+            <div class="card-actu">
+                <h3>🏃 Sport & bien-être</h3>
+                <p>Activités physiques adaptées, parcours ludiques et ateliers bien-être pour se dépenser ensemble.</p>
+            </div>
+            <div class="card-actu">
+                <h3>🎏 Événements festifs</h3>
+                <p>Fêtes thématiques, rassemblements intergénérationnels et moments de convivialité tout au long de l'année.</p>
+            </div>
+            <div class="card-actu">
+                <h3>💻 Ateliers numériques</h3>
+                <p>Initiation à l'informatique, prévention sur les usages du numérique et ateliers de découverte.</p>
+            </div>
+            <div class="card-actu">
+                <h3>⛑️ Gestes qui sauvent</h3>
+                <p>Sensibilisation aux premiers secours et apprentissage des réflexes citoyens essentiels dès le plus jeune âge.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="valeurs-section">
+        <section id="valeurs" class="valeurs-container">
+            <h2 style="color: var(--green-main);">Nos Valeurs</h2>
+
+            <div class="valeur-card">
+                <h3>🤝 Convivialité</h3>
+                <p>Partager des moments simples, chaleureux et authentiques où chacun trouve sa place en toute simplicité.</p>
+            </div>
+
+            <div class="valeur-card">
+                <h3>🧡 Solidarité</h3>
+                <p>Échanger, s'entraider et avancer ensemble pour renforcer le lien social sur l'ensemble de notre territoire.</p>
+            </div>
+
+            <div class="valeur-card">
+                <h3>👨‍👩‍👧‍👦 Intergénérationnel</h3>
+                <p>Encourager la transmission et le partage entre les enfants, les parents et les aînés à travers des activités partagées.</p>
+            </div>
+
+            <div class="valeur-card">
+                <h3>♿ Accessibilité</h3>
+                <p>Proposer des animations adaptées et accessibles à tous, financiers comme physiques, pour lever tous les freins.</p>
+            </div>
+
+            <div class="valeur-card">
+                <h3>🌍 Inclusivité</h3>
+                <p>Accueillir chaque personne telle qu'elle est, sans aucune distinction de lieu de résidence ou de parcours.</p>
+            </div>
+        </section>
+    </div>
+
+    <section id="adhesion">
+        <h2 style="color: var(--orange-main);">Rejoignez notre Tribu !</h2>
+        
+        <div class="adhesion-box">
+            <h3 style="color: var(--orange-main); text-align: center; margin-top:0;">Pourquoi adhérer ?</h3>
+            <p>En adhérant à <strong>La Tribu de Val</strong>, vous soutenez les projets pour les enfants, les familles et les structures de l'Yonne tout en profitant de nombreux avantages :</p>
+            
+            <div class="adhesion-list">
+                <ul>
+                    <li><strong>Réductions exclusives :</strong> Tarifs préférentiels sur nos animations et chez nos partenaires.</li>
+                    <li><strong>Accès prioritaire :</strong> Réservation prioritaire sur les ateliers et animations à places limitées.</li>
+                    <li><strong>Ouvert à tous :</strong> Sans aucune distinction de lieu de résidence !</li>
+                </ul>
+
+                <h4 style="color: var(--green-main); margin-top: 25px; font-size: 1.15rem;">Tarifs des cotisations annuelles (Saison 2026 / 2027) :</h4>
+                <ul>
+                    <li><strong>Jeune (- de 18 ans) :</strong> 5 € / an</li>
+                    <li><strong>Individuelle :</strong> 10 € / an</li>
+                    <li><strong>Famille / Association / Personne morale :</strong> 20 € / an</li>
+                </ul>
+                <p style="font-size: 0.95rem; color: #666; margin-top: 15px;"><em>Règlements acceptés : Chèque (à l'ordre de La Tribu de Val), espèces ou virement bancaire.</em></p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#contact" class="btn">Demander des informations / Adhérer</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="contact-section">
+        <section id="contact" class="contact-container">
+            <h2 style="color: var(--green-main);">Contactez-nous</h2>
+
+            <div class="social-links">
+                <p><strong>Suivez nos actualités au quotidien sur nos réseaux sociaux :</strong></p>
+                <a href="https://www.facebook.com/profile.php?id=61592204247815" target="_blank" class="social-btn fb-btn">Facebook</a>
+                <a href="https://www.instagram.com/la_tribu_de_val/" target="_blank" class="social-btn insta-btn">Instagram</a>
+            </div>
+
+            <div class="contact-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nom">Nom & Prénom *</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse Email *</label>
+                        <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sujet">Sujet de votre message</label>
+                        <select id="sujet" name="sujet">
+                            <option value="adhesion">Je souhaite adhérer (Saison 2026 / 2027)</option>
+                            <option value="activites">Renseignements sur les activités</option>
+                            <option value="benevolat">Devenir bénévole / Participer</option>
+                            <option value="autre">Autre demande</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre Message *</label>
+                        <textarea id="message" name="message" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%;">Envoyer le message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <h3>La Tribu de Val</h3>
+        <p>📍 3 ruelle de Beausseron, 89110 Le Val d'Ocre</p>
+        <p>📧 Email : <a href="mailto:latribudeval.asso@gmail.com">latribudeval.asso@gmail.com</a></p>
+        <p>
+            🔗 <a href="https://www.facebook.com/profile.php?id=61592204247815" target="_blank">Facebook</a> | 
+            <a href="https://www.instagram.com/la_tribu_de_val/" target="_blank">Instagram</a> | 
+            <a href="javascript:void(0)" onclick="ouvrirMentions()">Mentions Légales</a>
+        </p>
+        <p><em>Association pour l'enfance et les familles de l'Yonne</em></p>
+    </footer>
+
+    <div id="mentionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fermerMentions()">&times;</span>
+            <h2>Mentions Légales</h2>
+            
+            <h3>1. Éditeur du site</h3>
+            <p>
+                Le présent site internet est édité par l'association <strong>La Tribu de Val</strong>, régie par la loi du 1er juillet 1901.<br>
+                <strong>Siège social :</strong> 3 ruelle de Beausseron, 89110 Le Val d'Ocre, France.<br>
+                <strong>Adresse électronique :</strong> latribudeval.asso@gmail.com
+            </p>
+
+            <h3>2. Direction de la publication</h3>
+            <p><strong>Directrice de la publication :</strong> La Présidente de l'association La Tribu de Val.</p>
+
+            <h3>3. Hébergement du site</h3>
+            <p>Le site est hébergé par : [Indiquez le nom de votre hébergeur web, ex: GitHub Pages / OVH].</p>
+
+            <h3>4. Propriété intellectuelle</h3>
+            <p>L'ensemble des contenus (textes, images, visuels, logo) présents sur ce site est la propriété exclusive de l'association <strong>La Tribu de Val</strong>. Toute reproduction ou représentation totale ou partielle sans autorisation préalable est interdite.</p>
+
+            <h3>5. Protection des données personnelles (RGPD)</h3>
+            <p>Les informations transmises via le formulaire de contact sont utilisées exclusivement pour répondre à vos demandes. Conformément à la réglementation RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant : <code>latribudeval.asso@gmail.com</code>.</p>
+        </div>
+    </div>
+
+    <script>
+        function ouvrirMentions() {
+            document.getElementById("mentionsModal").style.display = "block";
+        }
+
+        function fermerMentions() {
+            document.getElementById("mentionsModal").style.display = "none";
+        }
+
+        // Ferme la fenêtre si l'utilisateur clique en dehors de la boîte
+        window.onclick = function(event) {
+            var modal = document.getElementById("mentionsModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
