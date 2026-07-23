@@ -48,39 +48,98 @@
         }
 
         .logo-img {
-            height: 55px;
+            height: 50px;
             width: auto;
             border-radius: 50%;
         }
 
         .logo-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: bold;
             color: var(--orange-main);
         }
 
-        nav a {
-            margin-left: 15px;
+        /* MENU DESKTOP */
+        nav.nav-desktop {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav.nav-desktop a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 600;
             transition: color 0.3s;
         }
 
-        nav a:hover {
+        nav.nav-desktop a:hover {
             color: var(--orange-main);
+        }
+
+        /* BOUTON HAMBURGER (MOBILE) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--orange-main);
+            border-radius: 10px;
+            transition: all 0.3s linear;
+        }
+
+        /* MENU MOBILE COULISSANT */
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .nav-mobile a {
+            padding: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            display: block;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .nav-mobile a:hover {
+            background-color: var(--orange-light);
+            color: var(--orange-main);
+        }
+
+        .nav-mobile.active {
+            display: flex;
         }
 
         /* BANNIÈRE D'ACCUEIL (HERO) */
         .hero {
             background-color: var(--orange-light);
             text-align: center;
-            padding: 60px 20px;
+            padding: 50px 20px;
             border-bottom: 4px solid var(--orange-main);
         }
 
         .hero-logo {
-            max-width: 170px;
+            max-width: 150px;
             margin-bottom: 15px;
             border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -88,12 +147,12 @@
 
         .hero h1 {
             color: var(--orange-main);
-            font-size: 2.8rem;
+            font-size: 2.4rem;
             margin: 10px 0;
         }
 
         .hero p.slogan {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-style: italic;
             color: var(--green-main);
             margin-bottom: 20px;
@@ -103,7 +162,7 @@
         .hero p.description {
             max-width: 750px;
             margin: 0 auto 30px auto;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .hero-buttons {
@@ -124,6 +183,7 @@
             border: none;
             cursor: pointer;
             transition: transform 0.2s, background-color 0.2s;
+            text-align: center;
         }
 
         .btn:hover {
@@ -142,7 +202,7 @@
         .btn-site {
             display: inline-block;
             margin-top: 10px;
-            padding: 8px 16px;
+            padding: 10px 16px;
             background-color: var(--green-main);
             color: white;
             text-decoration: none;
@@ -182,15 +242,15 @@
 
         /* SECTIONS GÉNÉRALES */
         section {
-            padding: 60px 20px;
+            padding: 50px 20px;
             max-width: 950px;
             margin: 0 auto;
         }
 
         section h2 {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
+            font-size: 2rem;
+            margin-bottom: 30px;
             position: relative;
         }
 
@@ -204,24 +264,26 @@
             border-radius: 2px;
         }
 
-        /* SECTION ESPACE PRIVÉ (ADHÉRENTS & PARTENAIRES) */
+        /* SECTION ESPACE PRIVÉ */
         #espace-adherent {
             background-color: var(--orange-light);
-            padding: 60px 20px;
+            padding: 40px 15px;
             border-radius: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin: 40px auto;
+            margin: 30px auto;
             max-width: 900px;
             text-align: center;
+            box-sizing: border-box;
         }
 
         .login-box {
             background: var(--white);
-            padding: 30px;
+            padding: 25px 20px;
             border-radius: 15px;
-            max-width: 450px;
-            margin: 0 auto 30px auto;
+            max-width: 400px;
+            margin: 0 auto 20px auto;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-sizing: border-box;
         }
 
         .login-box label {
@@ -255,18 +317,24 @@
 
         .grid-avantages {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         .card-avantage {
             background: var(--white);
             border-radius: 15px;
-            padding: 25px;
+            padding: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.06);
             border-top: 5px solid var(--green-main);
-            text-align: left;
+            text-align: center;
+        }
+
+        .card-avantage img.badge-icon {
+            width: 85px;
+            height: auto;
+            margin-bottom: 10px;
         }
 
         .card-avantage h3 {
@@ -281,21 +349,21 @@
             padding: 5px 12px;
             border-radius: 15px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 10px;
         }
 
         /* SECTION ACTIVITÉS */
         .grid-activites {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
         .card-actu {
             background: var(--white);
             border-radius: 12px;
-            padding: 22px;
+            padding: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             border-left: 5px solid var(--orange-main);
         }
@@ -303,25 +371,26 @@
         .card-actu h3 {
             margin-top: 0;
             color: var(--orange-main);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
         }
 
         /* SECTION VALEURS */
         #valeurs-section {
             background-color: var(--green-light);
-            max-width: 100%;
-            padding: 60px 20px;
+            width: 100%;
+            padding: 50px 0;
         }
 
         .valeurs-container {
             max-width: 850px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         .valeur-card {
             background: var(--white);
             border-radius: 12px;
-            padding: 20px 25px;
+            padding: 20px;
             margin-bottom: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.04);
             border-left: 6px solid var(--green-main);
@@ -330,7 +399,7 @@
         .valeur-card h3 {
             margin-top: 0;
             color: var(--green-main);
-            font-size: 1.25rem;
+            font-size: 1.2rem;
         }
 
         /* SECTION ADHÉSION */
@@ -338,7 +407,7 @@
             background-color: var(--white);
             border: 2px solid var(--orange-main);
             border-radius: 15px;
-            padding: 35px;
+            padding: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             max-width: 800px;
             margin: 0 auto;
@@ -353,7 +422,7 @@
             position: relative;
             padding-left: 30px;
             margin-bottom: 15px;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         .adhesion-list li::before {
@@ -366,29 +435,30 @@
         /* SECTION CONTACT */
         #contact-section {
             background-color: var(--orange-light);
-            max-width: 100%;
-            padding: 60px 20px;
+            width: 100%;
+            padding: 50px 0;
         }
 
         .contact-container {
             max-width: 700px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         .contact-form {
             background: var(--white);
-            padding: 30px;
+            padding: 25px;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: bold;
         }
 
@@ -402,13 +472,13 @@
         }
 
         .form-group textarea {
-            height: 120px;
+            height: 110px;
             resize: vertical;
         }
 
         .social-links {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .social-btn {
@@ -453,12 +523,14 @@
 
         .modal-content {
             background-color: var(--white);
-            margin: 5% auto;
-            padding: 30px;
+            margin: 10% auto;
+            padding: 25px;
             border-radius: 12px;
-            max-width: 750px;
+            max-width: 90%;
+            width: 650px;
             position: relative;
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            box-sizing: border-box;
         }
 
         .close-btn {
@@ -483,7 +555,39 @@
         .modal-content h3 {
             color: var(--green-main);
             margin-top: 20px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
+        }
+
+        /* RESPONSIVE DESIGN (ECRANS MOBILE < 768px) */
+        @media (max-width: 768px) {
+            nav.nav-desktop {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p.slogan {
+                font-size: 1.05rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
@@ -494,13 +598,29 @@
             <img src="4131a53b-7a41-4568-8d8c-be5bc1652941.jpg" alt="Logo La Tribu de Val" class="logo-img">
             <span class="logo-title">La Tribu de Val</span>
         </div>
-        <nav>
+
+        <nav class="nav-desktop">
             <a href="#accueil">Accueil</a>
             <a href="#espace-adherent">Espace Privé</a>
             <a href="#activites">Nos Activités</a>
             <a href="#valeurs">Nos Valeurs</a>
             <a href="#adhesion">Rejoindre / Adhérer</a>
             <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-mobile" id="navMobile">
+            <a href="#accueil" onclick="toggleMenu()">Accueil</a>
+            <a href="#espace-adherent" onclick="toggleMenu()">Espace Privé</a>
+            <a href="#activites" onclick="toggleMenu()">Nos Activités</a>
+            <a href="#valeurs" onclick="toggleMenu()">Nos Valeurs</a>
+            <a href="#adhesion" onclick="toggleMenu()">Rejoindre / Adhérer</a>
+            <a href="#contact" onclick="toggleMenu()">Contact</a>
         </nav>
     </header>
 
@@ -517,7 +637,7 @@
         </div>
     </div>
 
-    <div style="padding: 0 20px;">
+    <div style="padding: 0 15px;">
         <section id="espace-adherent">
             <h2 style="color: var(--orange-main); margin-top:0;">🔐 Espace Privé</h2>
             <p>Connectez-vous à votre espace réservé (Adhérents ou Partenaires).</p>
@@ -531,7 +651,7 @@
                 <h3 style="color: var(--green-main); margin-top:0; margin-bottom: 20px;">Connexion Adhérent</h3>
                 
                 <label for="numAdherent">Numéro d'adhérent :</label>
-                <input type="text" id="numAdherent" placeholder="Ex: LTDV-2026-XX" required>
+                <input type="password" id="numAdherent" placeholder="Saisissez votre code confidentiel" required>
 
                 <label for="pwdAdherent">Mot de passe :</label>
                 <input type="password" id="pwdAdherent" placeholder="Saisissez votre mot de passe" required>
@@ -543,8 +663,8 @@
             <div id="loginPartenaire" class="login-box" style="display: none;">
                 <h3 style="color: var(--green-main); margin-top:0; margin-bottom: 20px;">Connexion Partenaire</h3>
                 
-                <label for="codePartenaire">Nom de votre structure partenaire :</label>
-                <input type="text" id="codePartenaire" placeholder="Ex: GRAVETINCELLE, DOMIMARK, CIC..." required>
+                <label for="codePartenaire">Identifiant Partenaire :</label>
+                <input type="password" id="codePartenaire" placeholder="Saisissez votre identifiant" required>
 
                 <label for="pwdPartenaire">Mot de passe :</label>
                 <input type="password" id="pwdPartenaire" placeholder="Saisissez votre mot de passe" required>
@@ -555,35 +675,35 @@
 
             <div id="advantagesContent" class="advantages-content">
                 <div style="background-color: #E8F5E9; padding: 15px; border-radius: 10px; border: 1px solid #4CAF50; margin-bottom: 25px;">
-                    🎉 <strong>Bienvenue Cher Adhérent !</strong> Vos privilèges sont débloqués.
+                    🎉 <strong>Bienvenue Cher Adhérent !</strong> Vos privilèges et badges exclusifs sont débloqués.
                 </div>
 
                 <div class="grid-avantages">
                     <div class="card-avantage">
-                        <span class="badge-reduc">Offre Partenaire</span>
-                        <h3>🏦 Partenaire Réseau</h3>
-                        <p><strong>Remboursement de votre cotisation associative*</strong></p>
-                        <p style="font-size:0.85rem; color:#666;">*Conditions à vérifier auprès de l'agence partenaire.</p>
+                        <img src="badge_classique.png" alt="Badge Classique" class="badge-icon">
+                        <span class="badge-reduc">Membre Tribu</span>
+                        <h3>🏅 Badge Adhérent</h3>
+                        <p>Votre statut de membre officiel certifié de La Tribu de Val.</p>
                     </div>
 
                     <div class="card-avantage">
-                        <span class="badge-reduc">-20% Réduction</span>
-                        <h3>📸 Studio Photos</h3>
-                        <p><strong>-20% sur toutes ses prestations</strong> (photographe événementiel & vidéo).</p>
-                        <p style="font-size:0.85rem; color:#666;">Sur présentation de votre carte d'adhérent.</p>
+                        <img src="grande_famille.png" alt="Grande Famille" class="badge-icon">
+                        <span class="badge-reduc">Communauté</span>
+                        <h3>👨‍👩‍👧‍👦 Grande Famille</h3>
+                        <p>Accès prioritaire aux événements et rassemblements familiaux.</p>
                     </div>
 
                     <div class="card-avantage">
+                        <img src="badge_aventure.png" alt="Badge Aventure" class="badge-icon">
+                        <span class="badge-reduc">Plein Air</span>
+                        <h3>🌲 Explorateur Tribu</h3>
+                        <p>Accès privilégié aux sorties nature et ateliers d'aventure.</p>
+                    </div>
+
+                    <div class="card-avantage">
+                        <img src="empreinte_tribu.png" alt="Empreinte Tribu" class="badge-icon">
                         <span class="badge-reduc">-10% Réduction</span>
-                        <h3>✨ Boutique Créative</h3>
-                        <p><strong>-10% sur vos commandes</strong></p>
-                        <p>Code Promo Exclusif : <strong style="background:#fff3cd; padding:2px 8px; border-radius:4px;">TRIBU10</strong></p>
-                    </div>
-
-                    <div class="card-avantage">
-                        <span class="badge-reduc">-10% Réduction</span>
-                        <h3>🛍️ Marque Enfant</h3>
-                        <p><strong>-10% sur vos commandes</strong></p>
+                        <h3>✨ Boutique & Partenaires</h3>
                         <p>Code Promo Exclusif : <strong style="background:#fff3cd; padding:2px 8px; border-radius:4px;">TRIBU10</strong></p>
                     </div>
                 </div>
@@ -600,17 +720,20 @@
 
                 <div class="grid-avantages">
                     <div class="card-avantage">
-                        <span class="badge-reduc">Kit de Visibilité</span>
+                        <img src="empreinte_tribu.png" alt="Kit Partenaire" class="badge-icon">
+                        <span class="badge-reduc">Kit Visibilité</span>
                         <h3>🖼️ Logos & Bannières Officielles</h3>
                         <p>Téléchargez les visuels officiels pour vos supports de communication :</p>
                         <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 15px;">
-                            <a href="4131a53b-7a41-4568-8d8c-be5bc1652941.jpg" download="Logo_La_Tribu_de_Val.jpg" class="btn-site">📥 Télécharger le Logo Officiel (JPG)</a>
-                            <a href="4beaaec4-5628-4334-a73b-cbb7eb86db42.png" download="Banniere_La_Tribu_de_Val.png" class="btn-site">📥 Télécharger la Bannière Officielle (PNG)</a>
+                            <a href="4131a53b-7a41-4568-8d8c-be5bc1652941.jpg" download="Logo_La_Tribu_de_Val.jpg" class="btn-site">📥 Logo Officiel (JPG)</a>
+                            <a href="4beaaec4-5628-4334-a73b-cbb7eb86db42.png" download="Banniere_La_Tribu_de_Val.png" class="btn-site">📥 Bannière Officielle (PNG)</a>
+                            <a href="4cc11b46-db48-4893-9585-49daf0129017.jfif" download="Affiche_La_Tribu_de_Val.jfif" class="btn-site">📥 Visualiser l'AfficheOfficielle</a>
                         </div>
                     </div>
 
                     <div class="card-avantage">
-                        <span class="badge-reduc">Contact Privilégié</span>
+                        <img src="badge_classique.png" alt="Contact Privilégié" class="badge-icon">
+                        <span class="badge-reduc">Partenaire Officiel</span>
                         <h3>📧 Contact Bureau</h3>
                         <p>Pour toute question sur nos partenariats ou événements :</p>
                         <p><strong>latribudeval.asso@gmail.com</strong></p>
@@ -708,7 +831,7 @@
                     <li><strong>Ouvert à tous :</strong> Sans aucune distinction de lieu de résidence !</li>
                 </ul>
 
-                <h4 style="color: var(--green-main); margin-top: 25px; font-size: 1.15rem;">Tarifs des cotisations annuelles :</h4>
+                <h4 style="color: var(--green-main); margin-top: 25px; font-size: 1.1rem;">Tarifs des cotisations annuelles :</h4>
                 <ul>
                     <li><strong>Jeune (- de 18 ans) :</strong> 5 € / an</li>
                     <li><strong>Individuelle :</strong> 10 € / an</li>
@@ -806,6 +929,19 @@
     </div>
 
     <script>
+        // GESTION DU MENU HAMBURGER MOBILE
+        var hamburgerBtn = document.getElementById("hamburgerBtn");
+        var navMobile = document.getElementById("navMobile");
+
+        hamburgerBtn.addEventListener("click", function() {
+            navMobile.classList.toggle("active");
+        });
+
+        function toggleMenu() {
+            navMobile.classList.remove("active");
+        }
+
+        // GESTION DES ESPACES PRIVÉS
         function switchTab(type) {
             var boxAdherent = document.getElementById("loginAdherent");
             var boxPartenaire = document.getElementById("loginPartenaire");
@@ -857,11 +993,11 @@
                 document.getElementById("loginAdherent").style.display = "none";
                 document.getElementById("loginPartenaire").style.display = "none";
                 document.getElementsByClassName("tab-buttons")[0].style.display = "none";
-                document.getElementById("partnerWelcomeMsg").innerText = "Bienvenue " + codeSaisi + " !";
+                document.getElementById("partnerWelcomeMsg").innerText = "Bienvenue Partenaire !";
                 document.getElementById("partnerContent").style.display = "block";
                 errorElem.style.display = "none";
             } else {
-                errorElem.innerText = "Nom de partenaire non reconnu ou mot de passe incorrect.";
+                errorElem.innerText = "Identifiant partenaire non reconnu ou mot de passe incorrect.";
                 errorElem.style.display = "block";
             }
         }
