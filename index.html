@@ -201,13 +201,13 @@
 
         .btn-site {
             display: inline-block;
-            margin-top: 10px;
-            padding: 10px 16px;
+            margin-top: 8px;
+            padding: 8px 14px;
             background-color: var(--green-main);
             color: white;
             text-decoration: none;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: bold;
             transition: background-color 0.2s;
         }
@@ -271,7 +271,7 @@
             border-radius: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin: 30px auto;
-            max-width: 900px;
+            max-width: 950px;
             text-align: center;
             box-sizing: border-box;
         }
@@ -317,7 +317,7 @@
 
         .grid-avantages {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
             margin-top: 25px;
         }
@@ -340,6 +340,7 @@
         .card-avantage h3 {
             color: var(--orange-main);
             margin-top: 0;
+            font-size: 1.15rem;
         }
 
         .badge-reduc {
@@ -558,36 +559,15 @@
             font-size: 1.05rem;
         }
 
-        /* RESPONSIVE DESIGN (ECRANS MOBILE < 768px) */
+        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
-            nav.nav-desktop {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero p.slogan {
-                font-size: 1.05rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            section h2 {
-                font-size: 1.6rem;
-            }
+            nav.nav-desktop { display: none; }
+            .hamburger { display: flex; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero p.slogan { font-size: 1.05rem; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; box-sizing: border-box; }
+            section h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -650,8 +630,8 @@
             <div id="loginAdherent" class="login-box">
                 <h3 style="color: var(--green-main); margin-top:0; margin-bottom: 20px;">Connexion Adhérent</h3>
                 
-                <label for="numAdherent">Numéro d'adhérent :</label>
-                <input type="password" id="numAdherent" placeholder="Saisissez votre code confidentiel" required>
+                <label for="numAdherent">Numéro d'adhérent ou Identifiant :</label>
+                <input type="text" id="numAdherent" placeholder="Ex: LTDV-2026-01" required>
 
                 <label for="pwdAdherent">Mot de passe :</label>
                 <input type="password" id="pwdAdherent" placeholder="Saisissez votre mot de passe" required>
@@ -663,8 +643,8 @@
             <div id="loginPartenaire" class="login-box" style="display: none;">
                 <h3 style="color: var(--green-main); margin-top:0; margin-bottom: 20px;">Connexion Partenaire</h3>
                 
-                <label for="codePartenaire">Identifiant Partenaire :</label>
-                <input type="password" id="codePartenaire" placeholder="Saisissez votre identifiant" required>
+                <label for="codePartenaire">Nom de votre structure partenaire :</label>
+                <input type="text" id="codePartenaire" placeholder="Nom de votre structure" required>
 
                 <label for="pwdPartenaire">Mot de passe :</label>
                 <input type="password" id="pwdPartenaire" placeholder="Saisissez votre mot de passe" required>
@@ -675,70 +655,112 @@
 
             <div id="advantagesContent" class="advantages-content">
                 <div style="background-color: #E8F5E9; padding: 15px; border-radius: 10px; border: 1px solid #4CAF50; margin-bottom: 25px;">
-                    🎉 <strong>Bienvenue Cher Adhérent !</strong> Vos privilèges et badges exclusifs sont débloqués.
+                    🎉 <strong>Bienvenue Cher Adhérent !</strong> Vos avantages et votre espace de téléchargement sont débloqués.
                 </div>
+
+                <h3 style="color: var(--green-main); margin-top: 20px;">🎁 Vos Avantages Exclusifs</h3>
+                <div class="grid-avantages">
+                    <div class="card-avantage">
+                        <img src="empreinte_tribu.png" alt="Réduction Partenaires" class="badge-icon">
+                        <span class="badge-reduc">-10% Réduction</span>
+                        <h3>🛍️ Boutiques & Partenaires Network</h3>
+                        <p>Remise exclusive chez l'ensemble de nos partenaires sur présentation de votre statut.</p>
+                        <p>Code Promo Exclusif : <strong style="background:#fff3cd; padding:2px 8px; border-radius:4px; font-size:1.1rem; color:#d97706;">TRIBU10</strong></p>
+                    </div>
+
+                    <div class="card-avantage">
+                        <img src="grande_famille.png" alt="Rassemblements Familiaux" class="badge-icon">
+                        <span class="badge-reduc">Priorité Accès</span>
+                        <h3>👨‍👩‍👧‍👦 Studio Photo & Événements</h3>
+                        <p>Accès prioritaire garanti pour les séances du Studio Photo de la Tribu et ateliers à places limitées.</p>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--orange-main); margin-top: 40px; border-top: 2px dashed #ffd1b3; padding-top: 20px;">📥 Zone de Téléchargements Adhérents</h3>
+                <p>Téléchargez vos badges officiels "Je fais partie de la tribu" ainsi que le coloriage officiel :</p>
 
                 <div class="grid-avantages">
                     <div class="card-avantage">
                         <img src="badge_classique.png" alt="Badge Classique" class="badge-icon">
-                        <span class="badge-reduc">Membre Tribu</span>
-                        <h3>🏅 Badge Adhérent</h3>
-                        <p>Votre statut de membre officiel certifié de La Tribu de Val.</p>
-                    </div>
-
-                    <div class="card-avantage">
-                        <img src="grande_famille.png" alt="Grande Famille" class="badge-icon">
-                        <span class="badge-reduc">Communauté</span>
-                        <h3>👨‍👩‍👧‍👦 Grande Famille</h3>
-                        <p>Accès prioritaire aux événements et rassemblements familiaux.</p>
+                        <h3>🏅 Badge Membre Tribu</h3>
+                        <p>Badge visuel officiel "Je fais partie de la tribu".</p>
+                        <a href="badge_classique.png" download="Badge_Classique_Tribu.png" class="btn-site">📥 Télécharger (PNG)</a>
                     </div>
 
                     <div class="card-avantage">
                         <img src="badge_aventure.png" alt="Badge Aventure" class="badge-icon">
-                        <span class="badge-reduc">Plein Air</span>
-                        <h3>🌲 Explorateur Tribu</h3>
-                        <p>Accès privilégié aux sorties nature et ateliers d'aventure.</p>
+                        <h3>🌲 Badge Explorateur</h3>
+                        <p>Badge thématique nature et sorties de la Tribu.</p>
+                        <a href="badge_aventure.png" download="Badge_Aventure_Tribu.png" class="btn-site">📥 Télécharger (PNG)</a>
+                    </div>
+
+                    <div class="card-avantage">
+                        <img src="grande_famille.png" alt="Badge Grande Famille" class="badge-icon">
+                        <h3>👨‍👩‍👧‍👦 Badge Grande Famille</h3>
+                        <p>Visuel d'appartenance à la communauté Tribu.</p>
+                        <a href="grande_famille.png" download="Badge_Grande_Famille.png" class="btn-site">📥 Télécharger (PNG)</a>
                     </div>
 
                     <div class="card-avantage">
                         <img src="empreinte_tribu.png" alt="Empreinte Tribu" class="badge-icon">
-                        <span class="badge-reduc">-10% Réduction</span>
-                        <h3>✨ Boutique & Partenaires</h3>
-                        <p>Code Promo Exclusif : <strong style="background:#fff3cd; padding:2px 8px; border-radius:4px;">TRIBU10</strong></p>
+                        <h3>🐾 Badge Empreinte Tribu</h3>
+                        <p>Emblème officiel de soutien à la Tribu.</p>
+                        <a href="empreinte_tribu.png" download="Badge_Empreinte_Tribu.png" class="btn-site">📥 Télécharger (PNG)</a>
+                    </div>
+
+                    <div class="card-avantage" style="grid-column: 1 / -1; max-width: 400px; margin: 0 auto;">
+                        <span class="badge-reduc">Loisir Créatif</span>
+                        <h3>🎨 Coloriage Officiel La Tribu de Val</h3>
+                        <p>Téléchargez et imprimez le coloriage officiel de l'association pour vos enfants !</p>
+                        <a href="4cc11b46-db48-4893-9585-49daf0129017.jfif" download="Coloriage_La_Tribu_de_Val.jfif" class="btn-site">📥 Télécharger le Coloriage (JFIF)</a>
                     </div>
                 </div>
 
-                <div style="margin-top: 30px; text-align: center;">
+                <div style="margin-top: 35px; text-align: center;">
                     <button onclick="seDeconnecter()" class="btn btn-green">Se déconnecter</button>
                 </div>
             </div>
 
             <div id="partnerContent" class="advantages-content">
                 <div style="background-color: #E8F5E9; padding: 15px; border-radius: 10px; border: 1px solid #4CAF50; margin-bottom: 25px;">
-                    🤝 <strong id="partnerWelcomeMsg">Bienvenue Partenaire !</strong> Bienvenue dans votre espace réservé.
+                    🤝 <strong id="partnerWelcomeMsg">Bienvenue Cher Partenaire !</strong> Bienvenue dans votre espace réservé.
                 </div>
+
+                <h3 style="color: var(--green-main); margin-top: 20px;">📥 Kit Visibilité & Téléchargements Partenaires</h3>
+                <p>Retrouvez ci-dessous l'ensemble des visuels officiels, badges de partenariat et éléments de communication à télécharger :</p>
 
                 <div class="grid-avantages">
                     <div class="card-avantage">
-                        <span class="badge-reduc">Kit Visibilité</span>
-                        <h3>🖼️ Logos Officiels & Coloriage</h3>
-                        <p>Téléchargez les visuels officiels pour vos supports de communication :</p>
-                        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 15px;">
+                        <span class="badge-reduc">Kit Comm</span>
+                        <h3>🖼️ Logo & Bannière Officiels</h3>
+                        <p>Visuels haute définition pour vos supports de communication :</p>
+                        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
                             <a href="4131a53b-7a41-4568-8d8c-be5bc1652941.jpg" download="Logo_La_Tribu_de_Val.jpg" class="btn-site">📥 Logo Officiel (JPG)</a>
                             <a href="4beaaec4-5628-4334-a73b-cbb7eb86db42.png" download="Banniere_La_Tribu_de_Val.png" class="btn-site">📥 Bannière Officielle (PNG)</a>
-                            <a href="4cc11b46-db48-4893-9585-49daf0129017.jfif" download="Coloriage_La_Tribu_de_Val.jfif" class="btn-site">📥 Coloriage Officiel (JFIF)</a>
                         </div>
                     </div>
 
                     <div class="card-avantage">
-                        <span class="badge-reduc">Partenaire Officiel</span>
-                        <h3>📧 Contact Bureau</h3>
-                        <p>Pour toute question sur nos partenariats ou événements :</p>
-                        <p><strong>latribudeval.asso@gmail.com</strong></p>
+                        <span class="badge-reduc">Loisir & Animations</span>
+                        <h3>🎨 Coloriage Officiel</h3>
+                        <p>Fiche coloriage de l'association mise à disposition pour vos accueils et événements :</p>
+                        <a href="4cc11b46-db48-4893-9585-49daf0129017.jfif" download="Coloriage_La_Tribu_de_Val.jfif" class="btn-site">📥 Coloriage Officiel (JFIF)</a>
+                    </div>
+
+                    <div class="card-avantage" style="grid-column: 1 / -1;">
+                        <span class="badge-reduc">Badges Partenariat</span>
+                        <h3>🎖️ Badges de Communication Tribu</h3>
+                        <p>Téléchargez l'ensemble des visuels de la Tribu de Val pour valoriser votre engagement :</p>
+                        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px;">
+                            <a href="badge_classique.png" download="Badge_Classique.png" class="btn-site">📥 Badge Classique</a>
+                            <a href="badge_aventure.png" download="Badge_Aventure.png" class="btn-site">📥 Badge Aventure</a>
+                            <a href="grande_famille.png" download="Badge_Grande_Famille.png" class="btn-site">📥 Badge Grande Famille</a>
+                            <a href="empreinte_tribu.png" download="Badge_Empreinte.png" class="btn-site">📥 Badge Empreinte</a>
+                        </div>
                     </div>
                 </div>
 
-                <div style="margin-top: 30px; text-align: center;">
+                <div style="margin-top: 35px; text-align: center;">
                     <button onclick="seDeconnecter()" class="btn btn-green">Se déconnecter</button>
                 </div>
             </div>
@@ -795,7 +817,7 @@
 
             <div class="valeur-card">
                 <h3>🧡 Solidarité</h3>
-                <p>Échanger, s'entraider et avancer ensemble pour renforcer le lien social sur l'ensemble de notre territory.</p>
+                <p>Échanger, s'entraider et avancer ensemble pour renforcer le lien social sur l'ensemble de notre territoire.</p>
             </div>
 
             <div class="valeur-card">
@@ -939,7 +961,23 @@
             navMobile.classList.remove("active");
         }
 
-        // GESTION DES ESPACES PRIVÉS
+        // GESTION DES MENTIONS LÉGALES
+        function ouvrirMentions() {
+            document.getElementById("mentionsModal").style.display = "block";
+        }
+
+        function fermerMentions() {
+            document.getElementById("mentionsModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("mentionsModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // BASCULEMENT DES ONGLETS ADHÉRENT / PARTENAIRE
         function switchTab(type) {
             var boxAdherent = document.getElementById("loginAdherent");
             var boxPartenaire = document.getElementById("loginPartenaire");
@@ -959,76 +997,60 @@
             }
         }
 
+        // VÉRIFICATION CONNEXION ADHÉRENT
         function verifierAdherent() {
-            var numSaisi = document.getElementById("numAdherent").value.trim().toUpperCase();
             var pwdSaisi = document.getElementById("pwdAdherent").value.trim();
             var errorElem = document.getElementById("errorMsg");
 
-            var regexAdherent = /^LTDV-2026-(0[1-9]|[1-9][0-9])$/;
-            var motDePasseValide = "TRIBU2026";
-
-            if (regexAdherent.test(numSaisi) && pwdSaisi === motDePasseValide) {
+            if (pwdSaisi === "TRIBU2026") {
                 document.getElementById("loginAdherent").style.display = "none";
                 document.getElementById("loginPartenaire").style.display = "none";
                 document.getElementsByClassName("tab-buttons")[0].style.display = "none";
                 document.getElementById("advantagesContent").style.display = "block";
                 errorElem.style.display = "none";
             } else {
-                errorElem.innerText = "Numéro d'adhérent ou mot de passe incorrect.";
+                errorElem.innerText = "Mot de passe incorrect. Astuce : Le mot de passe est TRIBU2026";
                 errorElem.style.display = "block";
             }
         }
 
+        // VÉRIFICATION CONNEXION PARTENAIRE (Accepte n'importe quelle structure avec le mot de passe PARTENAIRE2026)
         function verifierPartenaire() {
-            var codeSaisi = document.getElementById("codePartenaire").value.trim().toUpperCase();
+            var nomStructure = document.getElementById("codePartenaire").value.trim();
             var pwdSaisi = document.getElementById("pwdPartenaire").value.trim();
             var errorElem = document.getElementById("errorMsgPartenaire");
 
-            var partenairesAutorises = ["GRAVETINCELLE", "DOMIMARK", "CIC", "SUEVA PHOTO"];
-            var motDePassePartenaire = "PARTENAIRE2026";
-
-            if (partenairesAutorises.includes(codeSaisi) && pwdSaisi === motDePassePartenaire) {
+            if (nomStructure !== "" && pwdSaisi === "PARTENAIRE2026") {
                 document.getElementById("loginAdherent").style.display = "none";
                 document.getElementById("loginPartenaire").style.display = "none";
                 document.getElementsByClassName("tab-buttons")[0].style.display = "none";
-                document.getElementById("partnerWelcomeMsg").innerText = "Bienvenue Partenaire !";
                 document.getElementById("partnerContent").style.display = "block";
+                document.getElementById("partnerWelcomeMsg").innerText = "Bienvenue Partenaire : " + nomStructure + " !";
                 errorElem.style.display = "none";
             } else {
-                errorElem.innerText = "Identifiant partenaire non reconnu ou mot de passe incorrect.";
+                if (nomStructure === "") {
+                    errorElem.innerText = "Veuillez saisir le nom de votre structure.";
+                } else {
+                    errorElem.innerText = "Mot de passe partenaire incorrect (Mot de passe : PARTENAIRE2026).";
+                }
                 errorElem.style.display = "block";
             }
         }
 
+        // DECONNEXION
         function seDeconnecter() {
-            document.getElementById("loginAdherent").style.display = "block";
-            document.getElementById("loginPartenaire").style.display = "none";
-            document.getElementsByClassName("tab-buttons")[0].style.display = "flex";
             document.getElementById("advantagesContent").style.display = "none";
             document.getElementById("partnerContent").style.display = "none";
+            document.getElementsByClassName("tab-buttons")[0].style.display = "flex";
             
+            // Réinitialisation des formulaires
             document.getElementById("numAdherent").value = "";
             document.getElementById("pwdAdherent").value = "";
             document.getElementById("codePartenaire").value = "";
             document.getElementById("pwdPartenaire").value = "";
+            
             switchTab('adherent');
         }
-
-        function ouvrirMentions() {
-            document.getElementById("mentionsModal").style.display = "block";
-        }
-
-        function fermerMentions() {
-            document.getElementById("mentionsModal").style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            var modal = document.getElementById("mentionsModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
     </script>
-
 </body>
 </html>
