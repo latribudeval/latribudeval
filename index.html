@@ -531,7 +531,7 @@
                 <h3 style="color: var(--green-main); margin-top:0; margin-bottom: 20px;">Connexion Adhérent</h3>
                 
                 <label for="numAdherent">Numéro d'adhérent :</label>
-                <input type="text" id="numAdherent" placeholder="Ex: LTDV-2026-01" required>
+                <input type="text" id="numAdherent" placeholder="Ex: LTDV-2026-XX" required>
 
                 <label for="pwdAdherent">Mot de passe :</label>
                 <input type="password" id="pwdAdherent" placeholder="Saisissez votre mot de passe" required>
@@ -543,8 +543,8 @@
             <div id="loginPartenaire" class="login-box" style="display: none;">
                 <h3 style="color: var(--green-main); margin-top:0; margin-bottom: 20px;">Connexion Partenaire</h3>
                 
-                <label for="codePartenaire">Identifiant Partenaire :</label>
-                <input type="text" id="codePartenaire" placeholder="Ex: PARTENAIRE" required>
+                <label for="codePartenaire">Nom de votre structure partenaire :</label>
+                <input type="text" id="codePartenaire" placeholder="Ex: GRAVETINCELLE, DOMIMARK, CIC..." required>
 
                 <label for="pwdPartenaire">Mot de passe :</label>
                 <input type="password" id="pwdPartenaire" placeholder="Saisissez votre mot de passe" required>
@@ -597,7 +597,7 @@
 
             <div id="partnerContent" class="advantages-content">
                 <div style="background-color: #E8F5E9; padding: 15px; border-radius: 10px; border: 1px solid #4CAF50; margin-bottom: 25px;">
-                    🤝 <strong>Bienvenue Partenaire !</strong> Bienvenue dans votre espace réservé.
+                    🤝 <strong id="partnerWelcomeMsg">Bienvenue Partenaire !</strong> Bienvenue dans votre espace réservé.
                 </div>
 
                 <div class="grid-avantages">
@@ -849,16 +849,19 @@
             var pwdSaisi = document.getElementById("pwdPartenaire").value.trim();
             var errorElem = document.getElementById("errorMsgPartenaire");
 
+            // Liste des partenaires autorisés
+            var partenairesAutorises = ["GRAVETINCELLE", "GRAVÉTINCELLE", "DOMIMARK", "CIC", "SUEVA PHOTO", "SUEVA", "PARTENAIRE"];
             var motDePassePartenaire = "PARTENAIRE2026";
 
-            if (codeSaisi !== "" && pwdSaisi === motDePassePartenaire) {
+            if (partenairesAutorises.includes(codeSaisi) && pwdSaisi === motDePassePartenaire) {
                 document.getElementById("loginAdherent").style.display = "none";
                 document.getElementById("loginPartenaire").style.display = "none";
                 document.getElementsByClassName("tab-buttons")[0].style.display = "none";
+                document.getElementById("partnerWelcomeMsg").innerText = "Bienvenue " + codeSaisi + " !";
                 document.getElementById("partnerContent").style.display = "block";
                 errorElem.style.display = "none";
             } else {
-                errorElem.innerText = "Identifiant ou mot de passe partenaire incorrect.";
+                errorElem.innerText = "Nom de partenaire non reconnu ou mot de passe incorrect.";
                 errorElem.style.display = "block";
             }
         }
