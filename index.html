@@ -544,7 +544,7 @@
                 <h3 style="color: var(--green-main); margin-top:0; margin-bottom: 20px;">Connexion Partenaire</h3>
                 
                 <label for="codePartenaire">Nom de votre structure partenaire :</label>
-                <input type="text" id="codePartenaire" placeholder="Ex: GRAVETINCELLE, DOMIMARK, CIC..." required>
+                <input type="text" id="codePartenaire" placeholder="Ex: PARTENAIRE_DEMO, EXEMPLE_PRO..." required>
 
                 <label for="pwdPartenaire">Mot de passe :</label>
                 <input type="password" id="pwdPartenaire" placeholder="Saisissez votre mot de passe" required>
@@ -561,32 +561,30 @@
                 <div class="grid-avantages">
                     <div class="card-avantage">
                         <span class="badge-reduc">Offre Partenaire</span>
-                        <h3>🏦 CIC</h3>
+                        <h3>🏦 Partenaire Réseau</h3>
                         <p><strong>Remboursement de votre cotisation associative*</strong></p>
-                        <p style="font-size:0.85rem; color:#666;">*Conditions à vérifier auprès de votre agence CIC.</p>
+                        <p style="font-size:0.85rem; color:#666;">*Conditions à vérifier auprès de l'agence partenaire.</p>
                     </div>
 
                     <div class="card-avantage">
                         <span class="badge-reduc">-20% Réduction</span>
-                        <h3>📸 Sueva Photo</h3>
+                        <h3>📸 Studio Photos</h3>
                         <p><strong>-20% sur toutes ses prestations</strong> (photographe événementiel & vidéo).</p>
                         <p style="font-size:0.85rem; color:#666;">Sur présentation de votre carte d'adhérent.</p>
                     </div>
 
                     <div class="card-avantage">
                         <span class="badge-reduc">-10% Réduction</span>
-                        <h3>✨ Gravétincelle</h3>
+                        <h3>✨ Boutique Créative</h3>
                         <p><strong>-10% sur vos commandes</strong></p>
                         <p>Code Promo Exclusif : <strong style="background:#fff3cd; padding:2px 8px; border-radius:4px;">TRIBU10</strong></p>
-                        <a href="https://gravetincelle.com/" target="_blank" class="btn-site">🌐 Visiter le site internet</a>
                     </div>
 
                     <div class="card-avantage">
                         <span class="badge-reduc">-10% Réduction</span>
-                        <h3>🛍️ DOMIMARK</h3>
+                        <h3>🛍️ Marque Enfant</h3>
                         <p><strong>-10% sur vos commandes</strong></p>
                         <p>Code Promo Exclusif : <strong style="background:#fff3cd; padding:2px 8px; border-radius:4px;">TRIBU10</strong></p>
-                        <a href="https://domimark-kids.fr/" target="_blank" class="btn-site">🌐 Visiter le site internet</a>
                     </div>
                 </div>
 
@@ -849,8 +847,8 @@
             var pwdSaisi = document.getElementById("pwdPartenaire").value.trim();
             var errorElem = document.getElementById("errorMsgPartenaire");
 
-            // Liste des partenaires autorisés
-            var partenairesAutorises = ["GRAVETINCELLE", "GRAVÉTINCELLE", "DOMIMARK", "CIC", "SUEVA PHOTO", "SUEVA", "PARTENAIRE"];
+            // Noms fictifs des partenaires autorisés
+            var partenairesAutorises = ["PARTENAIRE_DEMO", "EXEMPLE_PRO", "BOUTIQUE_TEST", "STUDIO_IMAGINE", "ATELIER_CREATIF"];
             var motDePassePartenaire = "PARTENAIRE2026";
 
             if (partenairesAutorises.includes(codeSaisi) && pwdSaisi === motDePassePartenaire) {
