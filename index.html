@@ -316,7 +316,7 @@
             text-decoration: none;
         }
 
-        /* POP-UP MENTIONS LÉGALES (FENÊTRE MODALE) */
+        /* POP-UP MENTIONS LÉGALES */
         .modal {
             display: none;
             position: fixed;
@@ -477,17 +477,17 @@
                     <li><strong>Ouvert à tous :</strong> Sans aucune distinction de lieu de résidence !</li>
                 </ul>
 
-                <h4 style="color: var(--green-main); margin-top: 25px; font-size: 1.15rem;">Tarifs des cotisations annuelles (Saison 2026 / 2027) :</h4>
+                <h4 style="color: var(--green-main); margin-top: 25px; font-size: 1.15rem;">Tarifs des cotisations annuelles :</h4>
                 <ul>
-                    <li><strong>Jeune (- de 18 ans) :</strong> 5 € / an</li>
-                    <li><strong>Individuelle :</strong> 10 € / an</li>
-                    <li><strong>Famille / Association / Personne morale :</strong> 20 € / an</li>
+                    <li><strong>Jeune (- de 18 ans) [cite: 21, 24] :</strong> 5 € / an [cite: 24]</li>
+                    <li><strong>Individuelle [cite: 16, 22] :</strong> 10 € / an [cite: 22]</li>
+                    <li><strong>Famille / Association / Personne morale [cite: 20, 23] :</strong> 20 € / an [cite: 23]</li>
                 </ul>
-                <p style="font-size: 0.95rem; color: #666; margin-top: 15px;"><em>Règlements acceptés : Chèque (à l'ordre de La Tribu de Val), espèces ou virement bancaire.</em></p>
+                <p style="font-size: 0.95rem; color: #666; margin-top: 15px;"><em>Règlements acceptés : Chèque (à l'ordre de La Tribu de Val) [cite: 26, 29], espèces [cite: 27] ou virement bancaire[cite: 28].</em></p>
             </div>
             
             <div style="text-align: center; margin-top: 30px;">
-                <a href="#contact" class="btn">Demander des informations / Adhérer</a>
+                <a href="bulletin_adhesion_la_tribu_du_val.pdf" download class="btn" target="_blank">📄 Télécharger le bulletin d'adhésion (PDF)</a>
             </div>
         </div>
     </section>
@@ -503,7 +503,7 @@
             </div>
 
             <div class="contact-form">
-                <form action="#" method="POST">
+                <form action="https://formspree.io/f/latribudeval.asso@gmail.com" method="POST">
                     <div class="form-group">
                         <label for="nom">Nom & Prénom *</label>
                         <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
@@ -517,7 +517,7 @@
                     <div class="form-group">
                         <label for="sujet">Sujet de votre message</label>
                         <select id="sujet" name="sujet">
-                            <option value="adhesion">Je souhaite adhérer (Saison 2026 / 2027)</option>
+                            <option value="adhesion">Je souhaite adhérer</option>
                             <option value="activites">Renseignements sur les activités</option>
                             <option value="benevolat">Devenir bénévole / Participer</option>
                             <option value="autre">Autre demande</option>
@@ -537,7 +537,7 @@
 
     <footer>
         <h3>La Tribu de Val</h3>
-        <p>📍 3 ruelle de Beausseron, 89110 Le Val d'Ocre</p>
+        <p>📍 3 ruelle de Beausseron, 89110 Le Val d'Ocre [cite: 3, 35]</p>
         <p>📧 Email : <a href="mailto:latribudeval.asso@gmail.com">latribudeval.asso@gmail.com</a></p>
         <p>
             🔗 <a href="https://www.facebook.com/profile.php?id=61592204247815" target="_blank">Facebook</a> | 
@@ -555,7 +555,7 @@
             <h3>1. Éditeur du site</h3>
             <p>
                 Le présent site internet est édité par l'association <strong>La Tribu de Val</strong>, régie par la loi du 1er juillet 1901.<br>
-                <strong>Siège social :</strong> 3 ruelle de Beausseron, 89110 Le Val d'Ocre, France.<br>
+                <strong>Siège social :</strong> 3 ruelle de Beausseron, 89110 Le Val d'Ocre, France[cite: 3, 35].<br>
                 <strong>Adresse électronique :</strong> latribudeval.asso@gmail.com
             </p>
 
@@ -563,7 +563,7 @@
             <p><strong>Directrice de la publication :</strong> La Présidente de l'association La Tribu de Val.</p>
 
             <h3>3. Hébergement du site</h3>
-            <p>Le site est hébergé par : [Indiquez le nom de votre hébergeur web, ex: GitHub Pages / OVH].</p>
+            <p>Le site est hébergé par : GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis).</p>
 
             <h3>4. Propriété intellectuelle</h3>
             <p>L'ensemble des contenus (textes, images, visuels, logo) présents sur ce site est la propriété exclusive de l'association <strong>La Tribu de Val</strong>. Toute reproduction ou représentation totale ou partielle sans autorisation préalable est interdite.</p>
@@ -582,7 +582,6 @@
             document.getElementById("mentionsModal").style.display = "none";
         }
 
-        // Ferme la fenêtre si l'utilisateur clique en dehors de la boîte
         window.onclick = function(event) {
             var modal = document.getElementById("mentionsModal");
             if (event.target == modal) {
