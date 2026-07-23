@@ -631,7 +631,7 @@
                 <h3 style="color: var(--green-main); margin-top:0; margin-bottom: 20px;">Connexion Adhérent</h3>
                 
                 <label for="numAdherent">Numéro d'adhérent ou Identifiant :</label>
-                <input type="text" id="numAdherent" placeholder="Ex: LTDV-2026-01" required>
+                <input type="text" id="numAdherent" placeholder="Ex: LTDV-2026-XX" required>
 
                 <label for="pwdAdherent">Mot de passe :</label>
                 <input type="password" id="pwdAdherent" placeholder="Saisissez votre mot de passe" required>
@@ -655,24 +655,39 @@
 
             <div id="advantagesContent" class="advantages-content">
                 <div style="background-color: #E8F5E9; padding: 15px; border-radius: 10px; border: 1px solid #4CAF50; margin-bottom: 25px;">
-                    🎉 <strong>Bienvenue Cher Adhérent !</strong> Vos avantages et votre espace de téléchargement sont débloqués.
+                    🎉 <strong>Bienvenue Cher Adhérent !</strong> Vos privilèges et votre liste de partenaires sont débloqués.
                 </div>
 
-                <h3 style="color: var(--green-main); margin-top: 20px;">🎁 Vos Avantages Exclusifs</h3>
+                <h3 style="color: var(--green-main); margin-top: 20px;">🎁 Les Avantages Exclusifs Adhérents</h3>
+                <p>Grâce à votre carte d'adhérent, profitez d'avantages exclusifs chez nos partenaires :</p>
+                
                 <div class="grid-avantages">
                     <div class="card-avantage">
-                        <img src="empreinte_tribu.png" alt="Réduction Partenaires" class="badge-icon">
-                        <span class="badge-reduc">-10% Réduction</span>
-                        <h3>🛍️ Boutiques & Partenaires Network</h3>
-                        <p>Remise exclusive chez l'ensemble de nos partenaires sur présentation de votre statut.</p>
-                        <p>Code Promo Exclusif : <strong style="background:#fff3cd; padding:2px 8px; border-radius:4px; font-size:1.1rem; color:#d97706;">TRIBU10</strong></p>
+                        <span class="badge-reduc">Offre Partenaire</span>
+                        <h3>🏦 CIC</h3>
+                        <p><strong>Remboursement</strong> de votre cotisation associative*</p>
+                        <p style="font-size: 0.85rem; color: #555;"><em>*Conditions à vérifier auprès de votre agence CIC.</em></p>
                     </div>
 
                     <div class="card-avantage">
-                        <img src="grande_famille.png" alt="Rassemblements Familiaux" class="badge-icon">
-                        <span class="badge-reduc">Priorité Accès</span>
-                        <h3>👨‍👩‍👧‍👦 Studio Photo & Événements</h3>
-                        <p>Accès prioritaire garanti pour les séances du Studio Photo de la Tribu et ateliers à places limitées.</p>
+                        <span class="badge-reduc">-20% de Réduction</span>
+                        <h3>📸 Sueva Photo</h3>
+                        <p>Photographe événementiel - Projet Vidéo</p>
+                        <p><strong>-20 %</strong> sur toutes ses prestations sur présentation de la carte d'adhérent.</p>
+                    </div>
+
+                    <div class="card-avantage">
+                        <span class="badge-reduc">-10% de Réduction</span>
+                        <h3>🛒 Gravétincelle</h3>
+                        <p><strong>-10 %</strong> sur vos commandes.</p>
+                        <p style="font-size: 0.9rem; color: var(--orange-main); font-weight: bold;">Demandez votre code avantage à l'association.</p>
+                    </div>
+
+                    <div class="card-avantage">
+                        <span class="badge-reduc">-10% de Réduction</span>
+                        <h3>🛍️ DOMIMARK</h3>
+                        <p><strong>-10 %</strong> sur vos commandes.</p>
+                        <p style="font-size: 0.9rem; color: var(--orange-main); font-weight: bold;">Demandez votre code avantage à l'association.</p>
                     </div>
                 </div>
 
@@ -1014,7 +1029,7 @@
             }
         }
 
-        // VÉRIFICATION CONNEXION PARTENAIRE (Accepte n'importe quelle structure avec le mot de passe PARTENAIRE2026)
+        // VÉRIFICATION CONNEXION PARTENAIRE
         function verifierPartenaire() {
             var nomStructure = document.getElementById("codePartenaire").value.trim();
             var pwdSaisi = document.getElementById("pwdPartenaire").value.trim();
